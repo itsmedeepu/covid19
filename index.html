@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Covid-19 Dashboard</title>
+    <meta name="description" content="covid-19 dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/cs/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.css"
+    />
+
+    <!--------------------------------Jquery js-------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-----SLICKER CDNS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+  </head>
+  <!----main body starts here-->
+
+  <body class="body">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <!---================================================spinner ====================================-->
+    <div class="spinner-border text-primary" id="spinner" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+
+    <!---main container starts here -->
+    <div class="container-fluid">
+      <h2 class="text-center">COVID 19 DASHBOARD INDIA</h2>
+
+      <div class="container my-cards">
+        <!--CARDS SHOWING THE CASES========================================================= -->
+        <div id="my-cards" class="row mt-3 col-12">
+          <div
+            id="card"
+            class="card-active col-lg-2 ms-3 col-md-2 col=sm-3 mb-3 shadow"
+          >
+            <div class="card-body">
+              <h5>Active Cases</h5>
+              <p id="active"></p>
+            </div>
+          </div>
+          <div
+            id="card"
+            class="card-confirmed col-lg-2 ms-3 col-md-2 col=sm-3 mb-3 shadow"
+          >
+            <div class="card-body">
+              <h5>Confirmed Cases</h5>
+
+              <p id="confirmed"></p>
+            </div>
+          </div>
+          <div
+            id="card"
+            class="card-recovered col-lg-2 col-md-2 ms-3 col=sm-3 mb-3 shadow"
+          >
+            <div class="card-body">
+              <h5>Recovered Cases</h5>
+
+              <p id="recovered"></p>
+            </div>
+          </div>
+          <div
+            id="card"
+            class="card-deaths col-lg-2 col-md-2 ms-3 col=sm-3 mb-3 shadow"
+          >
+            <div class="card-body">
+              <h5>Death Cases</h5>
+
+              <p id="deaths"></p>
+            </div>
+          </div>
+        </div>
+
+        <!----SLICK SLIDER TRIGGER ON MOBILE VIEW EDITED BY DEEPAK S ON 06/10/2021-->
+
+        <!-- <div class="row mt-3 col-12 slicker">
+
+                <div id="card" class="card-active col-lg-2 ms-3 col-md-2 col=sm-3  mb-3 shadow">
+                    <div class="card-body">
+                        <h5>Active Cases</h5>
+                        <p id="tactive"></p>
+
+                    </div>
+
+                </div>
+                <div id="card" class="card-confirmed col-lg-2 ms-3 col-md-2 col=sm-3 mb-3 shadow">
+                    <div class="card-body">
+                        <h5>Confirmed Cases</h5>
+
+                        <p id="tconfirmed"></p>
+                    </div>
+
+                </div>
+                <div id="card" class="card-recovered col-lg-2 col-md-2 ms-3 col=sm-3 mb-3 shadow">
+                    <div class="card-body">
+                        <h5>Recovered Cases</h5>
+
+                        <p id="trecovered"></p>
+                    </div>
+
+                </div>
+                <div id="card" class="card-deaths col-lg-2 col-md-2 ms-3 col=sm-3 mb-3 shadow">
+                    <div class="card-body">
+                        <h5>Death Cases</h5>
+
+                        <p id="tdeaths"></p>
+                    </div>
+
+                </div>
+
+
+
+            </div> -->
+      </div>
+    </div>
+    <!---main container for cards ends here -->
+
+    <!-----------------------------------------------CARDS SHOWING THE CASES ENDS HERE================================================================== -->
+
+    <div class="container mt-3">
+      <div class="row col-12">
+        <div class="col-lg-6 col-md-4 col-sm-2 shadow chart">
+          <canvas id="myChart" width="400px" height="400px"></canvas>
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-2 shadow chart">
+          <canvas id="myChart2" width="400px" height="400px"></canvas>
+        </div>
+      </div>
+      <div class="row col-12 mt-5 chart shadow">
+        <div class="col-lg-6 col-md-10 col-sm-6 shadow">
+          <canvas id="myChart3" width="300px" height="400px"></canvas>
+        </div>
+        <div class="col-lg-6 col-md-10 col-sm-6 shadow details">
+          <p class="text-center">STATE WISE DATA</p>
+          <div class="table responsive table-responsive tableFixHead">
+            <table
+              class="table shadow table-bordered table-warning border-success table-hover"
+              id="statewise"
+            ></table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3 chart-align shadow">
+      <div class="row col-12">
+        <div class="col-lg-12 col-md-4 col-sm-2 chart shadow">
+          <canvas id="myChart4" width="auto" height="100px"></canvas>
+        </div>
+      </div>
+    </div>
+    <!-------back to top-->
+    <div id="back-to-top">
+      <img src="assets/images/bck.png" width="60px" title="Back to top" />
+    </div>
+
+    <!-------------FOOTER STARTS--------------------------------------------->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 p-4">
+          <p class="text-center">
+            Designed and Maintained by Deepak S-&copy; 2021
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-------------FOOTER ends Here -------------------------------------------->
+
+    <!---===============================Folating dark mode======================================---->
+    <div id="darkmode" class="form-check form-switch">
+      <img src="assets/images/moon.png" height="30px" id="dark1" />
+    </div>
+    <!---===============================Folating dark mode ends here---->
+
+    <!-------------JS CDN IMPORTANT files--------------------------------------------->
+
+    <!--------------------------------BOOTSTRAP CSS-------------------------------->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--------------------------------CHART JS JS -------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--------------------------------total india index JS -------------------------------->
+    <script src="assets/js/index.js" async defer></script>
+    <!--------------------------------main index JS -------------------------------->
+    <script src="assets/js/index1.js" async defer></script>
+    <!-------------------------------- karnataka state data JS files -------------------------------->
+    <script src="assets/js/states.js" async defer></script>
+    <!--------------------------------data JS file for state wise data -------------------------------->
+    <script src="assets/js/data.js" async defer></script>
+    <!-------------JS CDN IMPORTANT files ends here--------------------------------------------->
+    <script src="assets/js/states1.js" async defer></script>
+    <script>
+      //loader
+      function hideSpinner() {
+        document.getElementById("spinner").style.display = "none";
+      }
+
+      function showspinner() {
+        document.getElementById("spinner").style.display = "show";
+      }
+      window.onload = function () {
+        setTimeout(function () {
+          hideSpinner();
+        }, 3000);
+      };
+
+      //dark mode
+      var dark = document.getElementById("dark1");
+      dark.onclick = function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+          dark.src = "assets/images/sun.png";
+        } else {
+          dark.src = "assets/images/moon.png";
+        }
+      };
+    </script>
+    <!---SLICKER PLUGIN GOES HERE -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slicker").slick({
+          autoplay: true,
+          arrows: false,
+          dots: true,
+        });
+      });
+    </script>
+  </body>
+</html>

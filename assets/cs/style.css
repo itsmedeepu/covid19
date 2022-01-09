@@ -1,0 +1,161 @@
+:root {
+  --primary-color: white;
+  --secondary-color: black;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+#card {
+  border-radius: 15px;
+  /* transition: 1s linear all; */
+  margin: auto;
+  padding: 3px 10px;
+}
+
+#card .card-body p,
+h5 {
+  text-align: center;
+}
+
+#card .card-body p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+#card:hover {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.05);
+  box-shadow: 4px 4px 20px;
+}
+
+.card-active {
+  background-color: #08c0f3;
+  color: white;
+}
+
+.card-confirmed {
+  background-color: #ebe129;
+  color: white;
+}
+
+.card-recovered {
+  background-color: rgba(102, 255, 153);
+  color: white;
+}
+
+.card-deaths {
+  background-color: rgba(255, 0, 0);
+  color: white;
+}
+
+.table-responsive {
+  max-height: 400px;
+}
+
+.hed {
+  background-color: rgba(102, 255, 153);
+  color: white;
+}
+
+.details {
+  overflow-x: hidden;
+}
+
+.chart {
+  cursor: pointer;
+  overflow-x: auto;
+}
+
+.chart-align {
+  cursor: pointer;
+  overflow-x: auto;
+}
+
+/****move tot top*/
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+/*=============================================style for table fixed head=======================================*/
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: red;
+  color: white;
+}
+
+.chart {
+  cursor: pointer;
+}
+
+#spinner {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#darkmode {
+  position: absolute;
+  top: 3%;
+  -webkit-transform: translateY(30%);
+  -ms-transform: translateY(30%);
+  transform: translateY(30%);
+  right: 3%;
+  border-radius: 5rem;
+}
+
+/****dark mode***/
+#dark {
+  width: 30px;
+  cursor: pointer;
+}
+
+#darkmode:hover {
+  cursor: pointer;
+}
+
+.slicker {
+  display: none;
+}
+
+/********media screen*************************/
+@media only screen and (max-width: 600px) {
+  #darkmode {
+    position: absolute;
+    top: 0%;
+    -webkit-transform: translateY(30%);
+    -ms-transform: translateY(30%);
+    transform: translateY(30%);
+    right: 2%;
+    border-radius: 5rem;
+  }
+
+  #card {
+    border-radius: 15px;
+    /* transition: 1s linear all; */
+    margin: auto;
+    padding: 3px 10px;
+  }
+
+  #card .card-body p {
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
