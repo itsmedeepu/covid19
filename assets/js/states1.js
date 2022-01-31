@@ -18,7 +18,7 @@ async function getapi(url) {
   }
   me(barchartdata);
 
-  console.log(barchartdata);
+  // console.log(barchartdata);
 }
 // Calling that async function
 getapi(api4);
