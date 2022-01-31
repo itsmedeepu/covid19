@@ -201,7 +201,7 @@
       <div class="row">
         <div class="col-12 p-4">
           <p class="text-center">
-            Designed and Maintained by Deepak S-&copy; 2021
+            Designed and Maintained by Deepak S-&copy; <span id="date"></span>
           </p>
         </div>
       </div>
@@ -272,6 +272,9 @@
           dots: true,
         });
       });
+
+      ///auto update the year copyright year
+      document.getElementById("date").innerText = new Date.getFullYear();
     </script>
   </body>
 </html>
