@@ -13,7 +13,7 @@ async function getapi(url) {
   }
   go(data);
 
-  console.log(data);
+  // console.log(data);
 }
 // Calling that async function
 getapi(api3);

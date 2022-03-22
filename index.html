@@ -274,7 +274,15 @@
       });
 
       ///auto update the year copyright year
-      document.getElementById("date").innerText = new Date.getFullYear();
+      document.getElementById("date").innerText = new Date().getFullYear();
+
+      function alrt() {
+        alert(
+          "Government stopped capturing covid  data from 13/08/2021,Kindly refer Indian government website for more deatils ....."
+        );
+      }
+
+      window.onload = alrt;
     </script>
   </body>
 </html>
